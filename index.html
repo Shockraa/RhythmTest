@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm God</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="main1">
+        <div class="div1">
+            <h1>Rhythm God</h1>
+            <img class ="cd" src="src/img/cd.gif" alt="CD Girando">
+            <button onclick="jogo()" class="button1">Play</button>
+            <button onclick="comoJogar()" class="button2">How to play</button>
+            <button onclick="creditos()" class="button3">Credits</button>
+        </div>
+        
+    </div>
+    <div class="main2">
+        <p>Seta pressionada: <span id="tecla"></span></p>
+        <audio id="audio">
+            <source src="src/Dance/flowernight.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="upCpu">
+            <source src="src/Dance/up_snd.wav" type="audio/mpeg">
+        </audio>
+        <audio id="downCpu">
+            <source src="src/Dance/down_snd.wav" type="audio/mpeg">
+        </audio>
+        <audio id="leftCpu">
+            <source src="src/Dance/left_snd.wav" type="audio/mpeg">
+        </audio>
+        <audio id="rightCpu">
+            <source src="src/Dance/right_snd.wav" type="audio/mpeg">
+        </audio>
+        <audio id="upPlayer">
+            <source src="src/Dance/up2_snd.wav" type="audio/mpeg">
+        </audio>
+        <audio id="downPlayer">
+            <source src="src/Dance/down2_snd.wav" type="audio/mpeg">
+        </audio>
+        <audio id="leftPlayer">
+            <source src="src/Dance/left2_snd.wav" type="audio/mpeg">
+        </audio>
+        <audio id="rightPlayer">
+            <source src="src/Dance/right2_snd.wav" type="audio/mpeg">
+        </audio>
+
+    </div>
+    <div class="main3">
+        <div class="div3">
+            <h1>How to play</h1>
+            <h2 class="texto1">Pay attention to the directions said and repeat using the arrow keys</h2>
+            <h2 class="texto2">Press the keys on the right time and survive until the end</h2>
+            <h2 class="texto3">This game is based in DJ Sray boss from IWKTG</h2>
+            <button onclick="retornar()">Return</button>
+        </div>
+    </div>
+    <div class="main4">
+        <div class="div4">
+            <h1>Credits</h1>
+            <h2>Didn't finish</h2>
+            <button onclick="retornar()">Return</button>
+        </div>
+    </div>
+    <script src="src/script.js"></script>
+    <script src="src/game.js"></script>
+</body>
+</html>
