@@ -66,25 +66,47 @@ async function jogo() {
 
   const teclaSpan = document.getElementById('tecla');
 
-  //LÓGICA 
+  //LÓGICA ---------------------------------------------------------------------------
 
   teclaSpan.textContent = 'Teclas inativas. Aguarde...';
     document.removeEventListener('keydown', handleKeyDown);
 
 
-    await sleep(12500);
+    await sleep(11500); //music start
+
+    downCpu.play();
+    
+    await sleep(1000); //input time
 
    teclaSpan.textContent = 'Você pode usar as teclas agora!';
     document.addEventListener('keydown', handleKeyDown);
 
+    await sleep(1000); //input end
+
+    teclaSpan.textContent = 'Teclas inativas. Aguarde...';
+    document.removeEventListener('keydown', handleKeyDown);
+
+    await sleep(700); //Time to speak
+
+    upCpu.play();
+
+    await sleep(900);
+
+    teclaSpan.textContent = 'Você pode usar as teclas agora!';
+    document.addEventListener('keydown', handleKeyDown);
+
     await sleep(1000);
 
 
     teclaSpan.textContent = 'Teclas inativas. Aguarde...';
     document.removeEventListener('keydown', handleKeyDown);
 
+    await sleep(700);
 
-    await sleep(2000);
+    leftCpu.play();
+
+
+    await sleep(900);
 
     teclaSpan.textContent = 'Você pode usar as teclas agora!';
     document.addEventListener('keydown', handleKeyDown);
@@ -92,21 +114,17 @@ async function jogo() {
 
     await sleep(1000);
 
-
     teclaSpan.textContent = 'Teclas inativas. Aguarde...';
     document.removeEventListener('keydown', handleKeyDown);
 
+    await sleep(700);
 
-    await sleep(2000);
+    rightCpu.play();
+
+    await sleep(900);
 
     teclaSpan.textContent = 'Você pode usar as teclas agora!';
     document.addEventListener('keydown', handleKeyDown);
-
-
-    await sleep(1000);
-
-    teclaSpan.textContent = 'Teclas inativas. Aguarde...';
-    document.removeEventListener('keydown', handleKeyDown);
 
 
     await sleep(2000);
