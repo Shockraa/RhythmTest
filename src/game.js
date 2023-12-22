@@ -1,7 +1,9 @@
+function sleep(ms)
+{
+  return new Promise(resolve => setTimeout(resolve,ms))
+}
 
-
-
-function jogo() {
+async function jogo() {
   document.querySelector('.main1').style.display = 'none';
   document.querySelector('.main2').style.display = 'flex';
   document.querySelector('.main3').style.display = 'none';
@@ -23,15 +25,10 @@ function jogo() {
   const downCheck = false;
   const leftCheck = false;
   const rightCheck = false;
-
-  audio.play();
-
-  // Obtém o elemento do parágrafo onde mostraremos a tecla pressionada
-  const teclaSpan = document.getElementById('tecla');
+  
 
   // Adiciona um ouvinte de eventos para o evento keydown
-  document.addEventListener('keydown', function (event) {
-    // Verifica o código da tecla pressionada
+  function handleKeyDown(event) {
     switch (event.keyCode) {
       case 37:
         leftPlayer.pause();
@@ -61,35 +58,64 @@ function jogo() {
         teclaSpan.textContent = 'Outra tecla';
         break;
     }
-  });
+  };
 
   let tempoInicial = null;
 
-setTimeout(function () {
-  upCpu.play();
-  setTimeout(function () {
-    setTimeout(function () {
-      // Verificar se uma tecla foi pressionada entre 12500 e 13000 milissegundos
-      document.addEventListener("keydown", function(event) {
-        const tempoPressionado = Date.now() - tempoInicial;
-        if (tempoPressionado >= 500 && tempoPressionado <= 1500) {
-          // Uma tecla foi pressionada dentro do tempo especificado
-          alert("Tecla pressionada no tempo certo!");
-        } else {
-          // Nenhuma tecla foi pressionada dentro do tempo especificado
-          alert("Nenhuma tecla foi pressionada no tempo certo!");
-        }
-      });
-    }, 1500);
-  }, 500);
-}, 11500);
+  audio.play();
 
-document.addEventListener("keydown", function(event) {
-  if (tempoInicial === null) {
-    tempoInicial = Date.now();
-  }
-});
+  const teclaSpan = document.getElementById('tecla');
 
+  //LÓGICA 
+
+  teclaSpan.textContent = 'Teclas inativas. Aguarde...';
+    document.removeEventListener('keydown', handleKeyDown);
+
+
+    await sleep(12500);
+
+   teclaSpan.textContent = 'Você pode usar as teclas agora!';
+    document.addEventListener('keydown', handleKeyDown);
+
+    await sleep(1000);
+
+
+    teclaSpan.textContent = 'Teclas inativas. Aguarde...';
+    document.removeEventListener('keydown', handleKeyDown);
+
+
+    await sleep(2000);
+
+    teclaSpan.textContent = 'Você pode usar as teclas agora!';
+    document.addEventListener('keydown', handleKeyDown);
+
+
+    await sleep(1000);
+
+
+    teclaSpan.textContent = 'Teclas inativas. Aguarde...';
+    document.removeEventListener('keydown', handleKeyDown);
+
+
+    await sleep(2000);
+
+    teclaSpan.textContent = 'Você pode usar as teclas agora!';
+    document.addEventListener('keydown', handleKeyDown);
+
+
+    await sleep(1000);
+
+    teclaSpan.textContent = 'Teclas inativas. Aguarde...';
+    document.removeEventListener('keydown', handleKeyDown);
+
+
+    await sleep(2000);
+
+    teclaSpan.textContent = 'Você pode usar as teclas agora!';
+
+    await sleep(1000);
+
+  
 
 }
 
