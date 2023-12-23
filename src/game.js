@@ -68,8 +68,14 @@ async function jogo() {
 
   //LÓGICA ---------------------------------------------------------------------------
 
+  //Obs, tempo original : 10:700 TUDO menos + 700
+
   teclaSpan.textContent = 'Teclas inativas. Aguarde...';
     document.removeEventListener('keydown', handleKeyDown);
+
+    //TEMPLATE BOX
+    
+    //TEMPLATE BOX
 
 
     await sleep(11500); //music start
@@ -83,55 +89,75 @@ async function jogo() {
 
     await sleep(1000); //input end
 
-    teclaSpan.textContent = 'Teclas inativas. Aguarde...';
+    teclaSpan.textContent = 'NAO PODE USAR';
     document.removeEventListener('keydown', handleKeyDown);
 
-    await sleep(700); //Time to speak
+    await sleep(680); //Time to speak
 
     upCpu.play();
 
     await sleep(900);
 
-    teclaSpan.textContent = 'Você pode usar as teclas agora!';
+    teclaSpan.textContent = 'PERMITIDO';
     document.addEventListener('keydown', handleKeyDown);
 
     await sleep(1000);
 
 
-    teclaSpan.textContent = 'Teclas inativas. Aguarde...';
+    teclaSpan.textContent = 'NAO PODE USAR';
     document.removeEventListener('keydown', handleKeyDown);
 
-    await sleep(700);
+    await sleep(710);
 
     leftCpu.play();
 
 
     await sleep(900);
 
-    teclaSpan.textContent = 'Você pode usar as teclas agora!';
+    teclaSpan.textContent = 'PERMITIDO';
     document.addEventListener('keydown', handleKeyDown);
 
 
     await sleep(1000);
 
-    teclaSpan.textContent = 'Teclas inativas. Aguarde...';
+    teclaSpan.textContent = 'NAO PODE USAR';
     document.removeEventListener('keydown', handleKeyDown);
 
-    await sleep(700);
+    await sleep(710);
 
     rightCpu.play();
 
     await sleep(900);
 
-    teclaSpan.textContent = 'Você pode usar as teclas agora!';
+    teclaSpan.textContent = 'PERMITIDO';
     document.addEventListener('keydown', handleKeyDown);
 
-
-    await sleep(2000);
-
-    teclaSpan.textContent = 'Você pode usar as teclas agora!';
-
     await sleep(1000);
+
+    teclaSpan.textContent = 'NAO PODE USAR';
+    document.removeEventListener('keydown', handleKeyDown);
+
+    await sleep(760);
+
+    upCpu.play(); await sleep(190);
+    leftCpu.play(); await sleep(460);
+    downCpu.play(); await sleep(330); 
+    downCpu.pause(); downCpu.currentTime = 0;
+    downCpu.play();
+
+    await sleep(50);
+
+    teclaSpan.textContent = 'PERMITIDO';
+    document.addEventListener('keydown', handleKeyDown);
+
+    await sleep (1400);
+
+    teclaSpan.textContent = 'NAO PODE USAR';
+    document.removeEventListener('keydown', handleKeyDown);
+
+
+
+
 
   
 
